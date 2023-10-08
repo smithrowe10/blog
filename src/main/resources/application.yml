@@ -1,0 +1,33 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: blog
+  datasource:
+    username: root
+    password: lm12138
+    url: jdbc:mysql://localhost:3306/blog?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: lm12138
+    lettuce:
+      pool:
+        max-active: 16
+        max-idle: 8
+        min-idle: 0
+        max-wait: 100ms
+
+  jackson:
+    default-property-inclusion: non_null
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+#logging:
+#  level:
+#    com.lm: debug
+#  pattern:
+#    dateformat: mm:ss.SSS
+
